@@ -1,4 +1,4 @@
-##### workout-2.0
+# workout-2.0
 react-native workout app
 
-# Это приложение созданано для удобного подсчета ваших успехов в домашних или уличных тренеровках . 
+##  This app is designed to easily track your progress in home or outdoor workouts.
