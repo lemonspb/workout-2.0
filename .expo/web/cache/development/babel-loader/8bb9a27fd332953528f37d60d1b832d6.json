@@ -1,0 +1,60 @@
+{
+  "ast": null,
+  "code": "import _slicedToArray from \"@babel/runtime/helpers/slicedToArray\";\n\nvar _this = this,\n    _jsxFileName = \"/Users/mihailskopenko/Desktop/code/workout-2.0/src/screens/StartScreen/index.js\";\n\nimport React, { useState, useLayoutEffect } from 'react';\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport ScrollView from \"react-native-web/dist/exports/ScrollView\";\nimport FlatList from \"react-native-web/dist/exports/FlatList\";\nimport Button from \"react-native-web/dist/exports/Button\";\nimport View from \"react-native-web/dist/exports/View\";\nimport { Picker } from \"@react-native-community/picker\";\nimport { observer } from \"mobx-react-lite\";\nimport { useStore } from \"../../components/provider\";\nimport { AntDesign } from '@expo/vector-icons';\nimport { List } from 'react-native-paper';\nvar StartScreen = observer(function (_ref) {\n  var navigation = _ref.navigation;\n  useLayoutEffect(function () {\n    navigation.setOptions({\n      headerTitle: \"Выбор упражнений\",\n      headerRight: function headerRight() {\n        return React.createElement(Button, {\n          onPress: function onPress() {\n            return navigation.navigate('StartPage');\n          },\n          title: \"\\u043D\\u0430\\u0447\\u0430\\u0442\\u044C\",\n          color: \"red\",\n          __self: _this,\n          __source: {\n            fileName: _jsxFileName,\n            lineNumber: 16,\n            columnNumber: 17\n          }\n        });\n      },\n      headerBackTitle: 'Назад'\n    });\n  }, [navigation]);\n\n  var _useStore = useStore(),\n      workout = _useStore.workout;\n\n  var _useState = useState(''),\n      _useState2 = _slicedToArray(_useState, 2),\n      value = _useState2[0],\n      setValue = _useState2[1];\n\n  return React.createElement(ScrollView, {\n    style: styles.container,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 31,\n      columnNumber: 9\n    }\n  }, React.createElement(Picker, {\n    selectedValue: value,\n    onValueChange: function onValueChange(itemValue) {\n      setValue(itemValue);\n\n      if (itemValue !== value) {\n        workout.onSelectWorkout(itemValue);\n      }\n    },\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 32,\n      columnNumber: 13\n    }\n  }, React.createElement(Picker.Item, {\n    label: 'Выберите упражнение',\n    value: '',\n    key: '',\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 40,\n      columnNumber: 17\n    }\n  }), workout.listWorkout.map(function (item) {\n    return React.createElement(Picker.Item, {\n      label: item,\n      value: item,\n      key: item,\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 41,\n        columnNumber: 62\n      }\n    });\n  })), React.createElement(List.Section, {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 43,\n      columnNumber: 13\n    }\n  }, React.createElement(List.Subheader, {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 44,\n      columnNumber: 5\n    }\n  }, \"C\\u043F\\u0438\\u0441\\u043E\\u043A \\u0443\\u043F\\u0440\\u0430\\u0436\\u043D\\u0435\\u043D\\u0438\\u0439\"), workout.listSelectWorkout.map(function (item) {\n    return React.createElement(List.Item, {\n      title: item.name,\n      right: function right() {\n        return React.createElement(List.Icon, {\n          icon: \"delete\",\n          onPress: function onPress() {\n            return workout.onRemoveSelectWorkout(item.id);\n          },\n          __self: _this,\n          __source: {\n            fileName: _jsxFileName,\n            lineNumber: 46,\n            columnNumber: 44\n          }\n        });\n      },\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 46,\n        columnNumber: 2\n      }\n    });\n  })));\n});\nvar styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    backgroundColor: '#fff'\n  },\n  containerItemList: {\n    alignItems: \"center\",\n    justifyContent: \"center\",\n    flexDirection: \"row\"\n  },\n  item: {\n    padding: 10,\n    fontSize: 18,\n    height: 44\n  },\n  title: {\n    paddingBottom: 100\n  }\n});\nexport default StartScreen;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/screens/StartScreen/index.js"
+    ],
+    "names": [
+      "React",
+      "useState",
+      "useLayoutEffect",
+      "Picker",
+      "observer",
+      "useStore",
+      "AntDesign",
+      "List",
+      "StartScreen",
+      "navigation",
+      "setOptions",
+      "headerTitle",
+      "headerRight",
+      "navigate",
+      "headerBackTitle",
+      "workout",
+      "value",
+      "setValue",
+      "styles",
+      "container",
+      "itemValue",
+      "onSelectWorkout",
+      "listWorkout",
+      "map",
+      "item",
+      "listSelectWorkout",
+      "name",
+      "onRemoveSelectWorkout",
+      "id",
+      "StyleSheet",
+      "create",
+      "flex",
+      "backgroundColor",
+      "containerItemList",
+      "alignItems",
+      "justifyContent",
+      "flexDirection",
+      "padding",
+      "fontSize",
+      "height",
+      "title",
+      "paddingBottom"
+    ],
+    "mappings": "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",
+    "sourcesContent": [
+      "import React, { useState, useLayoutEffect } from 'react';\nimport { StyleSheet, Text, ScrollView, FlatList, Button, View } from 'react-native';\nimport { Picker } from \"@react-native-community/picker\";\nimport { observer } from \"mobx-react-lite\"\nimport { useStore } from '../../components/provider'\nimport { AntDesign } from '@expo/vector-icons';\nimport { List } from 'react-native-paper';\n\n\nconst StartScreen = observer(({ navigation }) => {\n\n    useLayoutEffect(() => {\n        navigation.setOptions({\n            headerTitle: \"Выбор упражнений\",\n            headerRight: () => (\n                <Button\n                    onPress={() => navigation.navigate('StartPage')}\n                    title=\"начать\"\n                    color=\"red\"\n                />\n            ),\n            headerBackTitle: 'Назад'\n        })\n    }, [navigation])\n    const { workout } = useStore()\n\n    const [value, setValue] = useState('')\n\n\n    return (\n        <ScrollView style={styles.container}>\n            <Picker\n                selectedValue={value}\n                onValueChange={(itemValue) => {\n                    setValue(itemValue)\n                    if (itemValue !== value) {\n                        workout.onSelectWorkout(itemValue)\n                    }\n                }}>\n                <Picker.Item label={'Выберите упражнение'} value={''} key={''} />\n                {workout.listWorkout.map((item) => { return (<Picker.Item label={item} value={item} key={item} />) })}\n            </Picker>\n            <List.Section>\n    <List.Subheader>Cписок упражнений</List.Subheader>\n    {workout.listSelectWorkout.map((item)=>\n <List.Item title={item.name} right={() => <List.Icon icon=\"delete\" onPress={() => workout.onRemoveSelectWorkout(item.id)} />} />\n    )\n   }\n  </List.Section>\n            {/* <FlatList\n                data={workout.listSelectWorkout}\n                renderItem={({ item }) =>\n                    <View style={styles.containerItemList}>\n                        <Text key={item.id} style={styles.item}>{item.name}</Text>\n                        <AntDesign onPress={() => workout.onRemoveSelectWorkout(item.id)} name=\"delete\" size={24} color=\"black\" />\n                    </View>\n                }\n            /> */}\n        </ScrollView>\n    );\n})\n\nconst styles = StyleSheet.create({\n    container: {\n        flex: 1,\n        backgroundColor: '#fff',\n\n    },\n    containerItemList: {\n        alignItems: \"center\",\n        justifyContent: \"center\",\n        flexDirection: \"row\",\n    },\n    item: {\n        padding: 10,\n        fontSize: 18,\n        height: 44,\n    },\n    title: {\n        paddingBottom: 100\n    }\n});\n\nexport default StartScreen"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

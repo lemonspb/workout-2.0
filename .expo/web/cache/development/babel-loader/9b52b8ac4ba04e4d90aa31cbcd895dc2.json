@@ -1,0 +1,34 @@
+{
+  "ast": null,
+  "code": "import _slicedToArray from \"@babel/runtime/helpers/slicedToArray\";\n\nvar _this = this,\n    _jsxFileName = \"/Users/mihailskopenko/Desktop/code/workout-2.0/src/components/modal/index.js\";\n\nimport * as React from 'react';\nimport { Modal, Portal, Text, Button, Provider } from 'react-native-paper';\n\nvar Modalka = function Modalka() {\n  var _React$useState = React.useState(false),\n      _React$useState2 = _slicedToArray(_React$useState, 2),\n      visible = _React$useState2[0],\n      setVisible = _React$useState2[1];\n\n  var showModal = function showModal() {\n    return setVisible(true);\n  };\n\n  var hideModal = function hideModal() {\n    return setVisible(false);\n  };\n\n  var containerStyle = {\n    backgroundColor: 'white',\n    padding: 20\n  };\n  return React.createElement(Provider, {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 12,\n      columnNumber: 5\n    }\n  }, React.createElement(Portal, {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 13,\n      columnNumber: 7\n    }\n  }, React.createElement(Modal, {\n    visible: visible,\n    onDismiss: hideModal,\n    contentContainerStyle: containerStyle,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 14,\n      columnNumber: 9\n    }\n  }, React.createElement(Text, {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 15,\n      columnNumber: 11\n    }\n  }, \"Example Modal.  Click outside this area to dismiss.\"))), React.createElement(Button, {\n    style: {\n      marginTop: 30\n    },\n    onPress: showModal,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 18,\n      columnNumber: 7\n    }\n  }, \"Show\"));\n};\n\nexport default Modal;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/components/modal/index.js"
+    ],
+    "names": [
+      "React",
+      "Modal",
+      "Portal",
+      "Text",
+      "Button",
+      "Provider",
+      "Modalka",
+      "useState",
+      "visible",
+      "setVisible",
+      "showModal",
+      "hideModal",
+      "containerStyle",
+      "backgroundColor",
+      "padding",
+      "marginTop"
+    ],
+    "mappings": ";;;;;AAAA,OAAO,KAAKA,KAAZ,MAAuB,OAAvB;AACA,SAASC,KAAT,EAAgBC,MAAhB,EAAwBC,IAAxB,EAA8BC,MAA9B,EAAsCC,QAAtC,QAAsD,oBAAtD;;AAEA,IAAMC,OAAO,GAAG,SAAVA,OAAU,GAAM;AACpB,wBAA8BN,KAAK,CAACO,QAAN,CAAe,KAAf,CAA9B;AAAA;AAAA,MAAOC,OAAP;AAAA,MAAgBC,UAAhB;;AAEA,MAAMC,SAAS,GAAG,SAAZA,SAAY;AAAA,WAAMD,UAAU,CAAC,IAAD,CAAhB;AAAA,GAAlB;;AACA,MAAME,SAAS,GAAG,SAAZA,SAAY;AAAA,WAAMF,UAAU,CAAC,KAAD,CAAhB;AAAA,GAAlB;;AACA,MAAMG,cAAc,GAAG;AAACC,IAAAA,eAAe,EAAE,OAAlB;AAA2BC,IAAAA,OAAO,EAAE;AAApC,GAAvB;AAEA,SACE,oBAAC,QAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE,oBAAC,MAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE,oBAAC,KAAD;AAAO,IAAA,OAAO,EAAEN,OAAhB;AAAyB,IAAA,SAAS,EAAEG,SAApC;AAA+C,IAAA,qBAAqB,EAAEC,cAAtE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE,oBAAC,IAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,2DADF,CADF,CADF,EAME,oBAAC,MAAD;AAAQ,IAAA,KAAK,EAAE;AAACG,MAAAA,SAAS,EAAE;AAAZ,KAAf;AAAgC,IAAA,OAAO,EAAEL,SAAzC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,YANF,CADF;AAYD,CAnBD;;AAqBA,eAAeT,KAAf",
+    "sourcesContent": [
+      "import * as React from 'react';\nimport { Modal, Portal, Text, Button, Provider } from 'react-native-paper';\n\nconst Modalka = () => {\n  const [visible, setVisible] = React.useState(false);\n\n  const showModal = () => setVisible(true);\n  const hideModal = () => setVisible(false);\n  const containerStyle = {backgroundColor: 'white', padding: 20};\n\n  return (\n    <Provider>\n      <Portal>\n        <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>\n          <Text>Example Modal.  Click outside this area to dismiss.</Text>\n        </Modal>\n      </Portal>\n      <Button style={{marginTop: 30}} onPress={showModal}>\n        Show\n      </Button>\n    </Provider>\n  );\n};\n\nexport default Modal;"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

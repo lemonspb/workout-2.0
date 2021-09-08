@@ -1,0 +1,57 @@
+{
+  "ast": null,
+  "code": "var _this = this,\n    _jsxFileName = \"/Users/mihailskopenko/Desktop/code/workout-2.0/src/components/modal/index.js\";\n\nimport * as React from 'react';\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport View from \"react-native-web/dist/exports/View\";\nimport Modal from \"react-native-web/dist/exports/Modal\";\nimport Pressable from \"react-native-web/dist/exports/Pressable\";\nimport { Picker } from \"@react-native-community/picker\";\nimport { observer } from \"mobx-react-lite\";\nvar ModalContainer = observer(function (props) {\n  console.log(props, '++');\n  return React.createElement(Modal, {\n    animationType: \"slide\",\n    transparent: true,\n    visible: props.modalVisible,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 11,\n      columnNumber: 5\n    }\n  }, React.createElement(View, {\n    style: styles.centeredView,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 16,\n      columnNumber: 9\n    }\n  }, React.createElement(View, {\n    style: styles.modalView,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 17,\n      columnNumber: 7\n    }\n  }, React.createElement(Text, {\n    style: styles.modalText,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 18,\n      columnNumber: 9\n    }\n  }, props.title), React.createElement(Picker, {\n    selectedValue: 'dfd',\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 19,\n      columnNumber: 9\n    }\n  }, React.createElement(Picker.Item, {\n    label: 'Выберите кол-во',\n    value: '',\n    key: '',\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 22,\n      columnNumber: 5\n    }\n  }), [1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 19].map(function (item, index) {\n    return React.createElement(Picker.Item, {\n      label: item,\n      value: item,\n      key: index,\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 23,\n        columnNumber: 51\n      }\n    });\n  })), React.createElement(Pressable, {\n    style: [styles.button, styles.buttonClose],\n    onPress: function onPress() {\n      return props.setModalVisible(false);\n    },\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 25,\n      columnNumber: 9\n    }\n  }, React.createElement(Text, {\n    style: styles.textStyle,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 29,\n      columnNumber: 11\n    }\n  }, \"\\u041E\\u041A\")))));\n});\nvar styles = StyleSheet.create({\n  modalView: {\n    margin: 20,\n    marginTop: 300,\n    backgroundColor: \"white\",\n    borderRadius: 20,\n    padding: 35,\n    shadowColor: \"#000\",\n    shadowOffset: {\n      width: 0,\n      height: 2\n    },\n    shadowOpacity: 0.25,\n    shadowRadius: 4,\n    elevation: 5\n  },\n  button: {\n    borderRadius: 20,\n    padding: 10,\n    elevation: 2\n  },\n  buttonOpen: {\n    backgroundColor: \"#F194FF\"\n  },\n  buttonClose: {\n    backgroundColor: \"#2196F3\"\n  },\n  textStyle: {\n    color: \"white\",\n    fontWeight: \"bold\",\n    textAlign: \"center\"\n  },\n  modalText: {\n    marginBottom: 15,\n    textAlign: \"center\"\n  }\n});\nexport default ModalContainer;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/components/modal/index.js"
+    ],
+    "names": [
+      "React",
+      "Picker",
+      "observer",
+      "ModalContainer",
+      "props",
+      "console",
+      "log",
+      "modalVisible",
+      "styles",
+      "centeredView",
+      "modalView",
+      "modalText",
+      "title",
+      "map",
+      "item",
+      "index",
+      "button",
+      "buttonClose",
+      "setModalVisible",
+      "textStyle",
+      "StyleSheet",
+      "create",
+      "margin",
+      "marginTop",
+      "backgroundColor",
+      "borderRadius",
+      "padding",
+      "shadowColor",
+      "shadowOffset",
+      "width",
+      "height",
+      "shadowOpacity",
+      "shadowRadius",
+      "elevation",
+      "buttonOpen",
+      "color",
+      "fontWeight",
+      "textAlign",
+      "marginBottom"
+    ],
+    "mappings": "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",
+    "sourcesContent": [
+      "import * as React from 'react';\nimport { StyleSheet, Text ,View,Modal,Pressable } from 'react-native';\nimport { Picker } from \"@react-native-community/picker\";\nimport { observer } from \"mobx-react-lite\"\n\nconst ModalContainer = observer((props) => {\n\n    console.log(props,'++')\n\n  return (\n    <Modal\n    animationType=\"slide\"\n    transparent={true}\n    visible={props.modalVisible}\n  >\n        <View style={styles.centeredView}>\n      <View style={styles.modalView}>\n        <Text style={styles.modalText}>{props.title}</Text>\n        <Picker\n    selectedValue={'dfd'}\n   >\n    <Picker.Item label={'Выберите кол-во'} value={''} key={''} />\n    {[1,2,3,4,5,6,7,8,8,8,19].map((item,index) => <Picker.Item label={item} value={item} key={index} />)}\n</Picker>\n        <Pressable\n          style={[styles.button, styles.buttonClose]}\n          onPress={() => props.setModalVisible(false)}\n        >\n          <Text style={styles.textStyle}>ОК</Text>\n        </Pressable>\n      </View>\n    </View>\n  </Modal>\n  );\n});\n\n\nconst styles = StyleSheet.create({\n    modalView: {\n        margin: 20,\n        marginTop: 300,\n        backgroundColor: \"white\",\n        borderRadius: 20,\n        padding: 35,\n        // alignItems: \"center\",\n        shadowColor: \"#000\",\n        shadowOffset: {\n          width: 0,\n          height: 2\n        },\n        shadowOpacity: 0.25,\n        shadowRadius: 4,\n        elevation: 5\n      },\n      button: {\n        borderRadius: 20,\n        padding: 10,\n        elevation: 2\n      },\n      buttonOpen: {\n        backgroundColor: \"#F194FF\",\n      },\n      buttonClose: {\n        backgroundColor: \"#2196F3\",\n      },\n      textStyle: {\n        color: \"white\",\n        fontWeight: \"bold\",\n        textAlign: \"center\"\n      },\n      modalText: {\n        marginBottom: 15,\n        textAlign: \"center\"\n      }\n});\n\nexport default ModalContainer;"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

@@ -1,1 +1,23 @@
-{"ast":null,"code":"import _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport Specifications from \"./specifications\";\nimport Workout from \"./workout\";\n\nvar RootStore = function RootStore() {\n  _classCallCheck(this, RootStore);\n\n  this.specifications = new Specifications(this);\n  this.workout = new Workout(this);\n};\n\nexport default RootStore;","map":{"version":3,"sources":["/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/rootStore.js"],"names":["Specifications","Workout","RootStore","specifications","workout"],"mappings":";AAAA,OAAOA,cAAP;AACA,OAAOC,OAAP;;IAGMC,S,GACF,qBAAc;AAAA;;AACV,OAAKC,cAAL,GAAsB,IAAIH,cAAJ,CAAmB,IAAnB,CAAtB;AACA,OAAKI,OAAL,GAAe,IAAIH,OAAJ,CAAY,IAAZ,CAAf;AAEH,C;;AAGL,eAAeC,SAAf","sourcesContent":["import Specifications from './specifications'\nimport Workout from './workout'\n\n\nclass RootStore {\n    constructor() {\n        this.specifications = new Specifications(this)\n        this.workout = new Workout(this)\n\n    }\n}\n\nexport default RootStore"]},"metadata":{},"sourceType":"module"}
+{
+  "ast": null,
+  "code": "import _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport Specifications from \"./specifications\";\nimport Workout from \"./workout\";\n\nvar RootStore = function RootStore() {\n  _classCallCheck(this, RootStore);\n\n  this.specifications = new Specifications(this);\n  this.workout = new Workout(this);\n};\n\nexport default RootStore;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/rootStore.js"
+    ],
+    "names": [
+      "Specifications",
+      "Workout",
+      "RootStore",
+      "specifications",
+      "workout"
+    ],
+    "mappings": ";AAAA,OAAOA,cAAP;AACA,OAAOC,OAAP;;IAGMC,S,GACF,qBAAc;AAAA;;AACV,OAAKC,cAAL,GAAsB,IAAIH,cAAJ,CAAmB,IAAnB,CAAtB;AACA,OAAKI,OAAL,GAAe,IAAIH,OAAJ,CAAY,IAAZ,CAAf;AAEH,C;;AAGL,eAAeC,SAAf",
+    "sourcesContent": [
+      "import Specifications from './specifications'\nimport Workout from './workout'\n\n\nclass RootStore {\n    constructor() {\n        this.specifications = new Specifications(this)\n        this.workout = new Workout(this)\n\n    }\n}\n\nexport default RootStore"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

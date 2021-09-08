@@ -1,0 +1,40 @@
+{
+  "ast": null,
+  "code": "import _toConsumableArray from \"@babel/runtime/helpers/toConsumableArray\";\nimport _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport _createClass from \"@babel/runtime/helpers/createClass\";\nimport { makeAutoObservable } from \"mobx\";\nimport 'react-native-get-random-values';\nimport { nanoid } from 'nanoid';\n\nvar Workout = function () {\n  function Workout() {\n    var _this = this;\n\n    _classCallCheck(this, Workout);\n\n    this.listWorkout = [\"отжимания\", \"подтягивания\"];\n    this.listSelectWorkout = [];\n    this.listNumberOfExercises = [];\n    this.selectWorkout = null;\n\n    this.onCreateWorkout = function (name) {\n      var newItemListWorkout = {\n        name: name,\n        id: nanoid(),\n        limit: 10,\n        leftToDo: null,\n        done: null\n      };\n      _this.listSelectWorkout = [].concat(_toConsumableArray(_this.listSelectWorkout), [newItemListWorkout]);\n    };\n\n    this.onSelectWorkout = function (idx) {\n      _this.selectWorkout = _this.listSelectWorkout.filter(function (_ref) {\n        var id = _ref.id;\n        return id === idx;\n      });\n    };\n\n    this.onRemoveSelectWorkout = function (idx) {\n      _this.listSelectWorkout = _this.listSelectWorkout.filter(function (_ref2) {\n        var id = _ref2.id;\n        return id !== idx;\n      });\n    };\n\n    this.numberOfExercises;\n    makeAutoObservable(this);\n  }\n\n  _createClass(Workout, [{\n    key: \"numberOfExercises\",\n    get: function get() {\n      var list = [];\n\n      for (var i = 30; i <= 1000; i++) {\n        list = [].concat(_toConsumableArray(list), [i]);\n      }\n\n      this.listWeight = list;\n    }\n  }]);\n\n  return Workout;\n}();\n\nexport default Workout;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/workout.js"
+    ],
+    "names": [
+      "makeAutoObservable",
+      "nanoid",
+      "Workout",
+      "listWorkout",
+      "listSelectWorkout",
+      "listNumberOfExercises",
+      "selectWorkout",
+      "onCreateWorkout",
+      "name",
+      "newItemListWorkout",
+      "id",
+      "limit",
+      "leftToDo",
+      "done",
+      "onSelectWorkout",
+      "idx",
+      "filter",
+      "onRemoveSelectWorkout",
+      "numberOfExercises",
+      "list",
+      "i",
+      "listWeight"
+    ],
+    "mappings": ";;;AAAA,SAASA,kBAAT,QAAmC,MAAnC;AACA,OAAO,gCAAP;AACA,SAASC,MAAT,QAAuB,QAAvB;;IACMC,O;AAaF,qBAAc;AAAA;;AAAA;;AAAA,SAZdC,WAYc,GAZA,CAAC,WAAD,EAAc,cAAd,CAYA;AAAA,SAXdC,iBAWc,GAXM,EAWN;AAAA,SAVdC,qBAUc,GAVU,EAUV;AAAA,SATdC,aASc,GATE,IASF;;AAAA,SAKdC,eALc,GAKI,UAACC,IAAD,EAAU;AACxB,UAAMC,kBAAkB,GAAG;AACvBD,QAAAA,IAAI,EAAJA,IADuB;AAEvBE,QAAAA,EAAE,EAAET,MAAM,EAFa;AAGvBU,QAAAA,KAAK,EAAE,EAHgB;AAIvBC,QAAAA,QAAQ,EAAE,IAJa;AAKvBC,QAAAA,IAAI,EAAE;AALiB,OAA3B;AAQA,MAAA,KAAI,CAACT,iBAAL,gCAA6B,KAAI,CAACA,iBAAlC,IAAqDK,kBAArD;AACH,KAfa;;AAAA,SAgBdK,eAhBc,GAgBI,UAACC,GAAD,EAAS;AAEvB,MAAA,KAAI,CAACT,aAAL,GAAqB,KAAI,CAACF,iBAAL,CAAuBY,MAAvB,CAA8B;AAAA,YAAGN,EAAH,QAAGA,EAAH;AAAA,eAAYA,EAAE,KAAKK,GAAnB;AAAA,OAA9B,CAArB;AACH,KAnBa;;AAAA,SAqBdE,qBArBc,GAqBU,UAACF,GAAD,EAAS;AAC7B,MAAA,KAAI,CAACX,iBAAL,GAAyB,KAAI,CAACA,iBAAL,CAAuBY,MAAvB,CAA8B;AAAA,YAAGN,EAAH,SAAGA,EAAH;AAAA,eAAYA,EAAE,KAAKK,GAAnB;AAAA,OAA9B,CAAzB;AAEH,KAxBa;;AACV,SAAKG,iBAAL;AACAlB,IAAAA,kBAAkB,CAAC,IAAD,CAAlB;AACH;;;;SAXD,eAAwB;AACpB,UAAImB,IAAI,GAAG,EAAX;;AACA,WAAK,IAAIC,CAAC,GAAG,EAAb,EAAiBA,CAAC,IAAE,IAApB,EAA0BA,CAAC,EAA3B,EAA8B;AAC1BD,QAAAA,IAAI,gCAAQA,IAAR,IAAaC,CAAb,EAAJ;AACH;;AACD,WAAKC,UAAL,GAAkBF,IAAlB;AACD;;;;;;AA8BP,eAAejB,OAAf",
+    "sourcesContent": [
+      "import { makeAutoObservable } from \"mobx\"\nimport 'react-native-get-random-values'\nimport { nanoid } from 'nanoid'\nclass Workout {\n    listWorkout = [\"отжимания\", \"подтягивания\"]\n    listSelectWorkout = []\n    listNumberOfExercises = []\n    selectWorkout = null\n    get numberOfExercises() {\n        let list = []\n        for (let i = 30; i<=1000; i++){\n            list =  [...list,i]\n        }\n        this.listWeight = list;\n      }\n\n    constructor() {\n        this.numberOfExercises\n        makeAutoObservable(this)\n    }\n\n    onCreateWorkout = (name) => {\n        const newItemListWorkout = {\n            name,\n            id: nanoid(),\n            limit: 10,\n            leftToDo: null,\n            done: null,\n\n        }\n        this.listSelectWorkout = [...this.listSelectWorkout, newItemListWorkout]\n    }\n    onSelectWorkout = (idx) => {\n\n        this.selectWorkout = this.listSelectWorkout.filter(({ id }) => id === idx)\n    }\n\n    onRemoveSelectWorkout = (idx) => {\n        this.listSelectWorkout = this.listSelectWorkout.filter(({ id }) => id !== idx)\n\n    }\n\n}\n\nexport default Workout"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

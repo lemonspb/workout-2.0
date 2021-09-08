@@ -30,8 +30,14 @@
     "react-native-screens": "~3.4.0",
     "react-native-web": "~0.13.12"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "devDependencies": {
-    "@babel/core": "^7.9.0"
+    "@babel/core": "^7.9.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "2.3.2"
   },
   "private": true
 }

@@ -1,1 +1,17 @@
-{"ast":null,"code":"import _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport _createClass from \"@babel/runtime/helpers/createClass\";\nimport { makeAutoObservable } from \"mobx\";\n\nvar Specifications = function () {\n  function Specifications() {\n    _classCallCheck(this, Specifications);\n\n    this.listheight = '';\n    this, test;\n    makeAutoObservable(this);\n  }\n\n  _createClass(Specifications, [{\n    key: \"test\",\n    get: function get() {\n      this.listheight = \"100\";\n    }\n  }]);\n\n  return Specifications;\n}();\n\nexport default Specifications;","map":{"version":3,"sources":["/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/specifications.js"],"names":["makeAutoObservable","Specifications","listheight","test"],"mappings":";;AAAA,SAASA,kBAAT,QAAmC,MAAnC;;IAEMC,c;AAMF,4BAAc;AAAA;;AAAA,SALbC,UAKa,GALA,EAKA;AACV,UAAKC,IAAL;AACAH,IAAAA,kBAAkB,CAAC,IAAD,CAAlB;AAEH;;;;SAPA,eAAW;AACR,WAAKE,UAAL;AACD;;;;;;AAWP,eAAeD,cAAf","sourcesContent":["import { makeAutoObservable } from \"mobx\"\n\nclass Specifications {\n     listheight = ''\n\n     get test() {\n        this.listheight = `100`;\n      }\n    constructor() {\n        this,test\n        makeAutoObservable(this)\n       \n    }\n\n  \n   \n}\n\nexport default Specifications"]},"metadata":{},"sourceType":"module"}
+{
+  "ast": null,
+  "code": "import _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport _createClass from \"@babel/runtime/helpers/createClass\";\nimport { makeAutoObservable } from \"mobx\";\n\nvar Specifications = function () {\n  function Specifications() {\n    _classCallCheck(this, Specifications);\n\n    this.listheight = '';\n    this, test;\n    makeAutoObservable(this);\n  }\n\n  _createClass(Specifications, [{\n    key: \"test\",\n    get: function get() {\n      this.listheight = \"100\";\n    }\n  }]);\n\n  return Specifications;\n}();\n\nexport default Specifications;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/specifications.js"
+    ],
+    "names": ["makeAutoObservable", "Specifications", "listheight", "test"],
+    "mappings": ";;AAAA,SAASA,kBAAT,QAAmC,MAAnC;;IAEMC,c;AAMF,4BAAc;AAAA;;AAAA,SALbC,UAKa,GALA,EAKA;AACV,UAAKC,IAAL;AACAH,IAAAA,kBAAkB,CAAC,IAAD,CAAlB;AAEH;;;;SAPA,eAAW;AACR,WAAKE,UAAL;AACD;;;;;;AAWP,eAAeD,cAAf",
+    "sourcesContent": [
+      "import { makeAutoObservable } from \"mobx\"\n\nclass Specifications {\n     listheight = ''\n\n     get test() {\n        this.listheight = `100`;\n      }\n    constructor() {\n        this,test\n        makeAutoObservable(this)\n       \n    }\n\n  \n   \n}\n\nexport default Specifications"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

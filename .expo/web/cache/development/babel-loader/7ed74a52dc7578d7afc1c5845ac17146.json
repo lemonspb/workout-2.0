@@ -1,0 +1,46 @@
+{
+  "ast": null,
+  "code": "import _toConsumableArray from \"@babel/runtime/helpers/toConsumableArray\";\nimport _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport _createClass from \"@babel/runtime/helpers/createClass\";\nimport { makeAutoObservable } from \"mobx\";\nimport 'react-native-get-random-values';\nimport { nanoid } from 'nanoid';\n\nvar Workout = function () {\n  function Workout() {\n    var _this = this;\n\n    _classCallCheck(this, Workout);\n\n    this.listWorkout = [\"отжимания\", \"подтягивания\", \"приседания\"];\n    this.listAmount = [];\n    this.listSelectWorkout = [];\n    this.listNumberOfExercises = [];\n    this.selectWorkout = null;\n\n    this.onCreateWorkout = function (name) {\n      if (name !== '') {\n        var newItemListWorkout = {\n          name: name,\n          id: nanoid(),\n          limit: 10,\n          leftToDo: null,\n          done: null\n        };\n        _this.listSelectWorkout = [].concat(_toConsumableArray(_this.listSelectWorkout), [newItemListWorkout]);\n      }\n    };\n\n    this.onSelectWorkout = function (idx) {\n      _this.selectWorkout = _this.listSelectWorkout.find(function (_ref) {\n        var id = _ref.id;\n        return id === idx;\n      });\n    };\n\n    this.onRemoveSelectWorkout = function (idx) {\n      _this.listSelectWorkout = _this.listSelectWorkout.filter(function (_ref2) {\n        var id = _ref2.id;\n        return id !== idx;\n      });\n    };\n\n    this.onChangeAmount = function (idx, newLimit) {\n      var itemWorkout = _this.listSelectWorkout.find(function (_ref3) {\n        var id = _ref3.id;\n        return id === idx;\n      });\n\n      itemWorkout.limit = newLimit;\n      _this.listSelectWorkout = _this.listSelectWorkout.map(function (item) {\n        return item.id === itemWorkout.id ? itemWorkout : item;\n      });\n    };\n\n    this.numberOfExercises;\n    makeAutoObservable(this);\n  }\n\n  _createClass(Workout, [{\n    key: \"numberOfExercises\",\n    get: function get() {\n      var list = [];\n\n      for (var i = 1; i <= 500; i++) {\n        list = [].concat(_toConsumableArray(list), [i]);\n      }\n\n      this.listAmount = list;\n    }\n  }]);\n\n  return Workout;\n}();\n\nexport default Workout;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/workout.js"
+    ],
+    "names": [
+      "makeAutoObservable",
+      "nanoid",
+      "Workout",
+      "listWorkout",
+      "listAmount",
+      "listSelectWorkout",
+      "listNumberOfExercises",
+      "selectWorkout",
+      "onCreateWorkout",
+      "name",
+      "newItemListWorkout",
+      "id",
+      "limit",
+      "leftToDo",
+      "done",
+      "onSelectWorkout",
+      "idx",
+      "find",
+      "onRemoveSelectWorkout",
+      "filter",
+      "onChangeAmount",
+      "newLimit",
+      "itemWorkout",
+      "map",
+      "item",
+      "numberOfExercises",
+      "list",
+      "i"
+    ],
+    "mappings": ";;;AAAA,SAASA,kBAAT,QAAmC,MAAnC;AACA,OAAO,gCAAP;AACA,SAASC,MAAT,QAAuB,QAAvB;;IACMC,O;AAcF,qBAAc;AAAA;;AAAA;;AAAA,SAbdC,WAac,GAbA,CAAC,WAAD,EAAc,cAAd,EAA6B,YAA7B,CAaA;AAAA,SAZdC,UAYc,GAZD,EAYC;AAAA,SAXdC,iBAWc,GAXM,EAWN;AAAA,SAVdC,qBAUc,GAVU,EAUV;AAAA,SATdC,aASc,GATE,IASF;;AAAA,SAKdC,eALc,GAKI,UAACC,IAAD,EAAU;AACxB,UAAGA,IAAI,KAAK,EAAZ,EAAe;AACf,YAAMC,kBAAkB,GAAG;AACvBD,UAAAA,IAAI,EAAJA,IADuB;AAEvBE,UAAAA,EAAE,EAAEV,MAAM,EAFa;AAGvBW,UAAAA,KAAK,EAAE,EAHgB;AAIvBC,UAAAA,QAAQ,EAAE,IAJa;AAKvBC,UAAAA,IAAI,EAAE;AALiB,SAA3B;AAQA,QAAA,KAAI,CAACT,iBAAL,gCAA6B,KAAI,CAACA,iBAAlC,IAAqDK,kBAArD;AACH;AACA,KAjBa;;AAAA,SAoBdK,eApBc,GAoBI,UAACC,GAAD,EAAS;AACvB,MAAA,KAAI,CAACT,aAAL,GAAqB,KAAI,CAACF,iBAAL,CAAuBY,IAAvB,CAA4B;AAAA,YAAGN,EAAH,QAAGA,EAAH;AAAA,eAAYA,EAAE,KAAKK,GAAnB;AAAA,OAA5B,CAArB;AACH,KAtBa;;AAAA,SAwBdE,qBAxBc,GAwBU,UAACF,GAAD,EAAS;AAC7B,MAAA,KAAI,CAACX,iBAAL,GAAyB,KAAI,CAACA,iBAAL,CAAuBc,MAAvB,CAA8B;AAAA,YAAGR,EAAH,SAAGA,EAAH;AAAA,eAAYA,EAAE,KAAKK,GAAnB;AAAA,OAA9B,CAAzB;AAEH,KA3Ba;;AAAA,SA6BdI,cA7Bc,GA6BG,UAACJ,GAAD,EAAMK,QAAN,EAAmB;AAChC,UAAMC,WAAW,GAAI,KAAI,CAACjB,iBAAL,CAAuBY,IAAvB,CAA4B;AAAA,YAAGN,EAAH,SAAGA,EAAH;AAAA,eAAYA,EAAE,KAAKK,GAAnB;AAAA,OAA5B,CAArB;;AACAM,MAAAA,WAAW,CAACV,KAAZ,GAAoBS,QAApB;AACA,MAAA,KAAI,CAAChB,iBAAL,GAAyB,KAAI,CAACA,iBAAL,CAAuBkB,GAAvB,CAA2B,UAACC,IAAD;AAAA,eAAQA,IAAI,CAACb,EAAL,KAAYW,WAAW,CAACX,EAAxB,GAA6BW,WAA7B,GAA0CE,IAAlD;AAAA,OAA3B,CAAzB;AACH,KAjCa;;AACV,SAAKC,iBAAL;AACAzB,IAAAA,kBAAkB,CAAC,IAAD,CAAlB;AACH;;;;SAXD,eAAwB;AACpB,UAAI0B,IAAI,GAAG,EAAX;;AACA,WAAK,IAAIC,CAAC,GAAG,CAAb,EAAgBA,CAAC,IAAE,GAAnB,EAAwBA,CAAC,EAAzB,EAA4B;AACxBD,QAAAA,IAAI,gCAAQA,IAAR,IAAaC,CAAb,EAAJ;AACH;;AACD,WAAKvB,UAAL,GAAkBsB,IAAlB;AACD;;;;;;AAuCP,eAAexB,OAAf",
+    "sourcesContent": [
+      "import { makeAutoObservable } from \"mobx\"\nimport 'react-native-get-random-values'\nimport { nanoid } from 'nanoid'\nclass Workout {\n    listWorkout = [\"отжимания\", \"подтягивания\",\"приседания\"]\n    listAmount = []\n    listSelectWorkout = []\n    listNumberOfExercises = []\n    selectWorkout = null\n    get numberOfExercises() {\n        let list = []\n        for (let i = 1; i<=500; i++){\n            list =  [...list,i]\n        }\n        this.listAmount = list;\n      }\n\n    constructor() {\n        this.numberOfExercises\n        makeAutoObservable(this)\n    }\n\n    onCreateWorkout = (name) => {\n        if(name !== ''){\n        const newItemListWorkout = {\n            name,\n            id: nanoid(),\n            limit: 10,\n            leftToDo: null,\n            done: null,\n\n        }\n        this.listSelectWorkout = [...this.listSelectWorkout, newItemListWorkout]\n    }\n    }\n\n\n    onSelectWorkout = (idx) => {\n        this.selectWorkout = this.listSelectWorkout.find(({ id }) => id === idx)\n    }\n\n    onRemoveSelectWorkout = (idx) => {\n        this.listSelectWorkout = this.listSelectWorkout.filter(({ id }) => id !== idx)\n\n    }\n\n    onChangeAmount = (idx, newLimit) => {\n        const itemWorkout =  this.listSelectWorkout.find(({ id }) => id === idx)\n        itemWorkout.limit = newLimit\n        this.listSelectWorkout = this.listSelectWorkout.map((item)=>item.id === itemWorkout.id?  itemWorkout: item)\n    }\n\n}\n\nexport default Workout"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

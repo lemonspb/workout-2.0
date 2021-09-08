@@ -1,0 +1,62 @@
+{
+  "ast": null,
+  "code": "import _slicedToArray from \"@babel/runtime/helpers/slicedToArray\";\n\nvar _this = this,\n    _jsxFileName = \"/Users/mihailskopenko/Desktop/code/workout-2.0/src/screens/InitScreen/index.js\";\n\nimport React, { useState, useLayoutEffect } from 'react';\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport Button from \"react-native-web/dist/exports/Button\";\nimport ScrollView from \"react-native-web/dist/exports/ScrollView\";\nimport { TextInput } from 'react-native-paper';\nimport { Picker } from \"@react-native-community/picker\";\nimport DateTimePicker from '@react-native-community/datetimepicker';\nimport { observer } from \"mobx-react-lite\";\nimport { useStore } from \"../../components/provider\";\nvar InitInfoScreen = observer(function (_ref) {\n  var navigation = _ref.navigation;\n  useLayoutEffect(function () {\n    navigation.setOptions({\n      headerTitle: \"Ваши характиристики\",\n      headerRight: function headerRight() {\n        return React.createElement(Button, {\n          onPress: function onPress() {\n            return navigation.navigate('StartPage');\n          },\n          title: \"\\u0414\\u0430\\u043B\\u0435\\u0435\",\n          __self: _this,\n          __source: {\n            fileName: _jsxFileName,\n            lineNumber: 16,\n            columnNumber: 9\n          }\n        });\n      }\n    });\n  }, [navigation]);\n\n  var _useStore = useStore(),\n      specifications = _useStore.specifications;\n\n  var _useState = useState(new Date(1598051730000)),\n      _useState2 = _slicedToArray(_useState, 2),\n      date = _useState2[0],\n      setDate = _useState2[1];\n\n  var _useState3 = useState('date'),\n      _useState4 = _slicedToArray(_useState3, 2),\n      mode = _useState4[0],\n      setMode = _useState4[1];\n\n  return React.createElement(ScrollView, {\n    style: styles.container,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 28,\n      columnNumber: 5\n    }\n  }, React.createElement(TextInput, {\n    label: \"\\u0418\\u043C\\u044F\",\n    value: specifications.formSpecification.name,\n    onChangeText: function onChangeText(text) {\n      return specifications.handleChange('name', text);\n    },\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 29,\n      columnNumber: 7\n    }\n  }), React.createElement(DateTimePicker, {\n    testID: \"dateTimePicker\",\n    value: date,\n    mode: mode,\n    locale: \"ru-RU\",\n    is24Hour: true,\n    display: \"inline\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 34,\n      columnNumber: 7\n    }\n  }), React.createElement(Picker, {\n    selectedValue: specifications.formSpecification.height,\n    onValueChange: function onValueChange(itemValue) {\n      specifications.handleChange('height', itemValue);\n    },\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 43,\n      columnNumber: 7\n    }\n  }, React.createElement(Picker.Item, {\n    label: \"\\u0412\\u044B\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 \\u0420\\u043E\\u0441\\u0442\",\n    value: \"\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 48,\n      columnNumber: 9\n    }\n  }), specifications.listHeight.map(function (h) {\n    return React.createElement(Picker.Item, {\n      label: h + \" \\u0441\\u043C\",\n      value: h,\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 51,\n        columnNumber: 13\n      }\n    });\n  })), React.createElement(Picker, {\n    selectedValue: specifications.formSpecification.weight,\n    onValueChange: function onValueChange(itemValue) {\n      specifications.handleChange('weight', itemValue);\n    },\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 55,\n      columnNumber: 7\n    }\n  }, React.createElement(Picker.Item, {\n    label: \"\\u0412\\u044B\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 \\u0432\\u0435\\u0441\",\n    value: \"\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 61,\n      columnNumber: 9\n    }\n  }), specifications.listWeight.map(function (w) {\n    return React.createElement(Picker.Item, {\n      label: w + \" \\u043A\\u0433\",\n      value: w,\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 62,\n        columnNumber: 47\n      }\n    });\n  })));\n});\nvar styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    backgroundColor: '#fff'\n  },\n  input: {\n    height: 40,\n    margin: 12,\n    borderWidth: 1,\n    padding: 10\n  },\n  title: {\n    paddingBottom: 100\n  }\n});\nexport default InitInfoScreen;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/screens/InitScreen/index.js"
+    ],
+    "names": [
+      "React",
+      "useState",
+      "useLayoutEffect",
+      "TextInput",
+      "Picker",
+      "DateTimePicker",
+      "observer",
+      "useStore",
+      "InitInfoScreen",
+      "navigation",
+      "setOptions",
+      "headerTitle",
+      "headerRight",
+      "navigate",
+      "specifications",
+      "Date",
+      "date",
+      "setDate",
+      "mode",
+      "setMode",
+      "styles",
+      "container",
+      "formSpecification",
+      "name",
+      "text",
+      "handleChange",
+      "height",
+      "itemValue",
+      "listHeight",
+      "map",
+      "h",
+      "weight",
+      "listWeight",
+      "w",
+      "StyleSheet",
+      "create",
+      "flex",
+      "backgroundColor",
+      "input",
+      "margin",
+      "borderWidth",
+      "padding",
+      "title",
+      "paddingBottom"
+    ],
+    "mappings": "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",
+    "sourcesContent": [
+      "import React, { useState, useLayoutEffect } from 'react';\nimport { StyleSheet, Button, ScrollView } from 'react-native';\nimport { TextInput } from 'react-native-paper';\nimport { Picker } from \"@react-native-community/picker\";\nimport DateTimePicker from '@react-native-community/datetimepicker';\nimport { observer } from \"mobx-react-lite\"\nimport { useStore } from '../../components/provider'\n\n\nconst InitInfoScreen = observer(({ navigation }) => {\n\n  useLayoutEffect(() => {\n    navigation.setOptions({\n      headerTitle: \"Ваши характиристики\",\n      headerRight: () => (\n        <Button\n          onPress={() => navigation.navigate('StartPage')}\n          title=\"Далее\"\n        />\n      ),\n    })\n  }, [navigation])\n\n  const { specifications } = useStore()\n  const [date, setDate] = useState(new Date(1598051730000));\n  const [mode, setMode] = useState('date');\n  return (\n    <ScrollView style={styles.container}>\n      <TextInput\n        label=\"Имя\"\n        value={specifications.formSpecification.name}\n        onChangeText={text => specifications.handleChange('name', text)}\n      />\n      <DateTimePicker\n        testID=\"dateTimePicker\"\n        value={date}\n        mode={mode}\n        locale=\"ru-RU\"\n        is24Hour={true}\n        display=\"inline\"\n\n      />\n      <Picker\n        selectedValue={specifications.formSpecification.height}\n        onValueChange={(itemValue) => {\n          specifications.handleChange('height', itemValue)\n        }}>\n        <Picker.Item label=\"Выберите Рост\" value=\"\" />\n        {specifications.listHeight.map((h) => {\n          return (\n            <Picker.Item label={`${h} см`} value={h} />\n          )\n        })}\n      </Picker>\n      <Picker\n        selectedValue={specifications.formSpecification.weight}\n        onValueChange={(itemValue) => {\n          specifications.handleChange('weight', itemValue)\n        }}\n      >\n        <Picker.Item label=\"Выберите вес\" value=\"\" />\n        {specifications.listWeight.map((w) => <Picker.Item label={`${w} кг`} value={w} />)}\n      </Picker>\n    </ScrollView>\n\n  );\n})\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    backgroundColor: '#fff',\n\n  },\n  input: {\n    height: 40,\n    margin: 12,\n    borderWidth: 1,\n    padding: 10,\n  },\n  title: {\n    paddingBottom: 100\n  }\n});\n\nexport default InitInfoScreen"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

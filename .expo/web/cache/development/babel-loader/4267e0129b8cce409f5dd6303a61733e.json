@@ -1,1 +1,17 @@
-{"ast":null,"code":"import _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport Specifications from \"./specifications\";\n\nvar RootStore = function RootStore() {\n  _classCallCheck(this, RootStore);\n\n  this.specification = new Specifications(this);\n};\n\nexport default RootStore;","map":{"version":3,"sources":["/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/rootStore.js"],"names":["Specifications","RootStore","specification"],"mappings":";AAAA,OAAOA,cAAP;;IAGMC,S,GACF,qBAAc;AAAA;;AACV,OAAKC,aAAL,GAAqB,IAAIF,cAAJ,CAAmB,IAAnB,CAArB;AAEH,C;;AAGL,eAAeC,SAAf","sourcesContent":["import Specifications from './specifications'\n\n\nclass RootStore {\n    constructor() {\n        this.specification = new Specifications(this)\n    \n    }\n}\n\nexport default RootStore"]},"metadata":{},"sourceType":"module"}
+{
+  "ast": null,
+  "code": "import _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport Specifications from \"./specifications\";\n\nvar RootStore = function RootStore() {\n  _classCallCheck(this, RootStore);\n\n  this.specification = new Specifications(this);\n};\n\nexport default RootStore;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/rootStore.js"
+    ],
+    "names": ["Specifications", "RootStore", "specification"],
+    "mappings": ";AAAA,OAAOA,cAAP;;IAGMC,S,GACF,qBAAc;AAAA;;AACV,OAAKC,aAAL,GAAqB,IAAIF,cAAJ,CAAmB,IAAnB,CAArB;AAEH,C;;AAGL,eAAeC,SAAf",
+    "sourcesContent": [
+      "import Specifications from './specifications'\n\n\nclass RootStore {\n    constructor() {\n        this.specification = new Specifications(this)\n    \n    }\n}\n\nexport default RootStore"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

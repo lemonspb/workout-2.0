@@ -1,1 +1,33 @@
-{"ast":null,"code":"var _this = this,\n    _jsxFileName = \"/Users/mihailskopenko/Desktop/code/workout-2.0/src/components/provider/index.js\";\n\nimport React from 'react';\nimport RootStore from \"../../stores/rootStore\";\nimport { useLocalObservable } from 'mobx-react-lite';\nvar mobxContext = React.createContext(null);\nexport var MobxProvider = function MobxProvider(_ref) {\n  var children = _ref.children;\n  var a = new RootStore();\n  console.log(a.specifications);\n  var store = useLocalObservable(a);\n  console.log(store, '&&&&');\n  return React.createElement(mobxContext.Provider, {\n    value: store,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 12,\n      columnNumber: 10\n    }\n  }, children);\n};\nexport var useStore = function useStore() {\n  var store = React.useContext(mobxContext);\n\n  if (!store) {\n    throw new Error('useStore must be used within a MobxProvider.');\n  }\n\n  return store;\n};","map":{"version":3,"sources":["/Users/mihailskopenko/Desktop/code/workout-2.0/src/components/provider/index.js"],"names":["React","RootStore","useLocalObservable","mobxContext","createContext","MobxProvider","children","a","console","log","specifications","store","useStore","useContext","Error"],"mappings":";;;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,OAAOC,SAAP;AACA,SAASC,kBAAT,QAAmC,iBAAnC;AAEA,IAAMC,WAAW,GAAGH,KAAK,CAACI,aAAN,CAAoB,IAApB,CAApB;AAEA,OAAO,IAAMC,YAAY,GAAG,SAAfA,YAAe,OAAkB;AAAA,MAAfC,QAAe,QAAfA,QAAe;AAC1C,MAAMC,CAAC,GAAG,IAAIN,SAAJ,EAAV;AACAO,EAAAA,OAAO,CAACC,GAAR,CAAYF,CAAC,CAACG,cAAd;AACF,MAAMC,KAAK,GAAGT,kBAAkB,CAACK,CAAD,CAAhC;AACAC,EAAAA,OAAO,CAACC,GAAR,CAAYE,KAAZ,EAAkB,MAAlB;AACA,SAAO,oBAAC,WAAD,CAAa,QAAb;AAAsB,IAAA,KAAK,EAAEA,KAA7B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAqCL,QAArC,CAAP;AACD,CANM;AAQP,OAAO,IAAMM,QAAQ,GAAG,SAAXA,QAAW,GAAM;AAC5B,MAAMD,KAAK,GAAGX,KAAK,CAACa,UAAN,CAAiBV,WAAjB,CAAd;;AACA,MAAI,CAACQ,KAAL,EAAY;AAEV,UAAM,IAAIG,KAAJ,CAAU,8CAAV,CAAN;AACD;;AACD,SAAOH,KAAP;AACD,CAPM","sourcesContent":["import React from 'react'\nimport RootStore from '../../stores/rootStore'\nimport { useLocalObservable } from 'mobx-react-lite' \n\nconst mobxContext = React.createContext(null)\n\nexport const MobxProvider = ({ children }) => {\n    const a = new RootStore()\n    console.log(a.specifications)\n  const store = useLocalObservable(a)\n  console.log(store,'&&&&')\n  return <mobxContext.Provider value={store}>{children}</mobxContext.Provider>\n}\n\nexport const useStore = () => {\n  const store = React.useContext(mobxContext)\n  if (!store) {\n    // this is especially useful in TypeScript so you don't need to be checking for null all the time\n    throw new Error('useStore must be used within a MobxProvider.')\n  }\n  return store\n}"]},"metadata":{},"sourceType":"module"}
+{
+  "ast": null,
+  "code": "var _this = this,\n    _jsxFileName = \"/Users/mihailskopenko/Desktop/code/workout-2.0/src/components/provider/index.js\";\n\nimport React from 'react';\nimport RootStore from \"../../stores/rootStore\";\nimport { useLocalObservable } from 'mobx-react-lite';\nvar mobxContext = React.createContext(null);\nexport var MobxProvider = function MobxProvider(_ref) {\n  var children = _ref.children;\n  var a = new RootStore();\n  console.log(a.specifications);\n  var store = useLocalObservable(a);\n  console.log(store, '&&&&');\n  return React.createElement(mobxContext.Provider, {\n    value: store,\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 12,\n      columnNumber: 10\n    }\n  }, children);\n};\nexport var useStore = function useStore() {\n  var store = React.useContext(mobxContext);\n\n  if (!store) {\n    throw new Error('useStore must be used within a MobxProvider.');\n  }\n\n  return store;\n};",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/components/provider/index.js"
+    ],
+    "names": [
+      "React",
+      "RootStore",
+      "useLocalObservable",
+      "mobxContext",
+      "createContext",
+      "MobxProvider",
+      "children",
+      "a",
+      "console",
+      "log",
+      "specifications",
+      "store",
+      "useStore",
+      "useContext",
+      "Error"
+    ],
+    "mappings": ";;;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,OAAOC,SAAP;AACA,SAASC,kBAAT,QAAmC,iBAAnC;AAEA,IAAMC,WAAW,GAAGH,KAAK,CAACI,aAAN,CAAoB,IAApB,CAApB;AAEA,OAAO,IAAMC,YAAY,GAAG,SAAfA,YAAe,OAAkB;AAAA,MAAfC,QAAe,QAAfA,QAAe;AAC1C,MAAMC,CAAC,GAAG,IAAIN,SAAJ,EAAV;AACAO,EAAAA,OAAO,CAACC,GAAR,CAAYF,CAAC,CAACG,cAAd;AACF,MAAMC,KAAK,GAAGT,kBAAkB,CAACK,CAAD,CAAhC;AACAC,EAAAA,OAAO,CAACC,GAAR,CAAYE,KAAZ,EAAkB,MAAlB;AACA,SAAO,oBAAC,WAAD,CAAa,QAAb;AAAsB,IAAA,KAAK,EAAEA,KAA7B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAqCL,QAArC,CAAP;AACD,CANM;AAQP,OAAO,IAAMM,QAAQ,GAAG,SAAXA,QAAW,GAAM;AAC5B,MAAMD,KAAK,GAAGX,KAAK,CAACa,UAAN,CAAiBV,WAAjB,CAAd;;AACA,MAAI,CAACQ,KAAL,EAAY;AAEV,UAAM,IAAIG,KAAJ,CAAU,8CAAV,CAAN;AACD;;AACD,SAAOH,KAAP;AACD,CAPM",
+    "sourcesContent": [
+      "import React from 'react'\nimport RootStore from '../../stores/rootStore'\nimport { useLocalObservable } from 'mobx-react-lite' \n\nconst mobxContext = React.createContext(null)\n\nexport const MobxProvider = ({ children }) => {\n    const a = new RootStore()\n    console.log(a.specifications)\n  const store = useLocalObservable(a)\n  console.log(store,'&&&&')\n  return <mobxContext.Provider value={store}>{children}</mobxContext.Provider>\n}\n\nexport const useStore = () => {\n  const store = React.useContext(mobxContext)\n  if (!store) {\n    // this is especially useful in TypeScript so you don't need to be checking for null all the time\n    throw new Error('useStore must be used within a MobxProvider.')\n  }\n  return store\n}"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

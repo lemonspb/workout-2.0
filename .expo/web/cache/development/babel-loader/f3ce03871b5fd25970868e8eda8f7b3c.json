@@ -1,0 +1,36 @@
+{
+  "ast": null,
+  "code": "import _toConsumableArray from \"@babel/runtime/helpers/toConsumableArray\";\nimport _classCallCheck from \"@babel/runtime/helpers/classCallCheck\";\nimport _createClass from \"@babel/runtime/helpers/createClass\";\nimport { makeAutoObservable } from \"mobx\";\nimport 'react-native-get-random-values';\nimport { nanoid } from 'nanoid';\n\nvar Workout = function () {\n  function Workout() {\n    var _this = this;\n\n    _classCallCheck(this, Workout);\n\n    this.listWorkout = [\"отжимания\", \"подтягивания\"];\n    this.listSelectWorkout = [];\n\n    this.onSelectWorkout = function (name) {\n      var newItemListWorkout = {\n        name: name,\n        id: nanoid(),\n        limit: 10,\n        leftToDo: null,\n        done: null\n      };\n      _this.listSelectWorkout = [].concat(_toConsumableArray(_this.listSelectWorkout), [newItemListWorkout]);\n    };\n\n    this.onRemoveSelectWorkout = function (idx) {\n      _this.listSelectWorkout = _this.listSelectWorkout.filter(function (_ref) {\n        var id = _ref.id;\n        return id !== idx;\n      });\n    };\n\n    makeAutoObservable(this);\n  }\n\n  _createClass(Workout, [{\n    key: \"weightList\",\n    get: function get() {\n      var list = [];\n\n      for (var i = 30; i <= 150; i++) {\n        list = [].concat(_toConsumableArray(list), [i]);\n      }\n\n      this.listWeight = list;\n    }\n  }]);\n\n  return Workout;\n}();\n\nexport default Workout;",
+  "map": {
+    "version": 3,
+    "sources": [
+      "/Users/mihailskopenko/Desktop/code/workout-2.0/src/stores/workout.js"
+    ],
+    "names": [
+      "makeAutoObservable",
+      "nanoid",
+      "Workout",
+      "listWorkout",
+      "listSelectWorkout",
+      "onSelectWorkout",
+      "name",
+      "newItemListWorkout",
+      "id",
+      "limit",
+      "leftToDo",
+      "done",
+      "onRemoveSelectWorkout",
+      "idx",
+      "filter",
+      "list",
+      "i",
+      "listWeight"
+    ],
+    "mappings": ";;;AAAA,SAASA,kBAAT,QAAmC,MAAnC;AACA,OAAO,gCAAP;AACA,SAASC,MAAT,QAAuB,QAAvB;;IACMC,O;AAWF,qBAAc;AAAA;;AAAA;;AAAA,SAVdC,WAUc,GAVA,CAAC,WAAD,EAAc,cAAd,CAUA;AAAA,SATdC,iBASc,GATM,EASN;;AAAA,SAIdC,eAJc,GAII,UAACC,IAAD,EAAU;AACxB,UAAMC,kBAAkB,GAAG;AACvBD,QAAAA,IAAI,EAAJA,IADuB;AAEvBE,QAAAA,EAAE,EAAEP,MAAM,EAFa;AAGvBQ,QAAAA,KAAK,EAAE,EAHgB;AAIvBC,QAAAA,QAAQ,EAAE,IAJa;AAKvBC,QAAAA,IAAI,EAAE;AALiB,OAA3B;AAQA,MAAA,KAAI,CAACP,iBAAL,gCAA6B,KAAI,CAACA,iBAAlC,IAAqDG,kBAArD;AACH,KAda;;AAAA,SAedK,qBAfc,GAeU,UAACC,GAAD,EAAS;AAC7B,MAAA,KAAI,CAACT,iBAAL,GAAyB,KAAI,CAACA,iBAAL,CAAuBU,MAAvB,CAA8B;AAAA,YAAGN,EAAH,QAAGA,EAAH;AAAA,eAAYA,EAAE,KAAKK,GAAnB;AAAA,OAA9B,CAAzB;AAEH,KAlBa;;AACVb,IAAAA,kBAAkB,CAAC,IAAD,CAAlB;AACH;;;;SAVD,eAAiB;AACb,UAAIe,IAAI,GAAG,EAAX;;AACA,WAAK,IAAIC,CAAC,GAAG,EAAb,EAAiBA,CAAC,IAAE,GAApB,EAAyBA,CAAC,EAA1B,EAA6B;AACzBD,QAAAA,IAAI,gCAAQA,IAAR,IAAaC,CAAb,EAAJ;AACH;;AACD,WAAKC,UAAL,GAAkBF,IAAlB;AACD;;;;;;AAwBP,eAAeb,OAAf",
+    "sourcesContent": [
+      "import { makeAutoObservable } from \"mobx\"\nimport 'react-native-get-random-values'\nimport { nanoid } from 'nanoid'\nclass Workout {\n    listWorkout = [\"отжимания\", \"подтягивания\"]\n    listSelectWorkout = []\n    get weightList() {\n        let list = []\n        for (let i = 30; i<=150; i++){\n            list =  [...list,i]\n        }\n        this.listWeight = list;\n      }\n\n    constructor() {\n        makeAutoObservable(this)\n    }\n\n    onSelectWorkout = (name) => {\n        const newItemListWorkout = {\n            name,\n            id: nanoid(),\n            limit: 10,\n            leftToDo: null,\n            done: null,\n\n        }\n        this.listSelectWorkout = [...this.listSelectWorkout, newItemListWorkout]\n    }\n    onRemoveSelectWorkout = (idx) => {\n        this.listSelectWorkout = this.listSelectWorkout.filter(({ id }) => id !== idx)\n\n    }\n\n}\n\nexport default Workout"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}
