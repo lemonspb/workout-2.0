@@ -7,6 +7,8 @@ class Workout {
   listSelectWorkout = [];
   listNumberOfExercises = [];
   selectWorkout = null;
+  tableWorkoutTitle = ["Упражнение", "Осталось", "Сделано", "Всего"];
+
   get numberOfExercises() {
     let list = [];
     for (let i = 1; i <= 500; i++) {
@@ -43,9 +45,14 @@ class Workout {
     );
   };
 
-  onChangeAmount = (idx, newLimit) => {
+  onChangeAmount = (idx, newValue, type) => {
     const itemWorkout = this.listSelectWorkout.find(({ id }) => id === idx);
-    itemWorkout.limit = newLimit;
+    itemWorkout[type] = newValue;
+    if (type === "done") {
+      const leftToDoResult = itemWorkout.limit - newValue;
+      itemWorkout.leftToDo = leftToDoResult <= 0 ? 0 : leftToDoResult;
+    }
+    console.log(itemWorkout);
     this.listSelectWorkout = this.listSelectWorkout.map((item) =>
       item.id === itemWorkout.id ? itemWorkout : item
     );

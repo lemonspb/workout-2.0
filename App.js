@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleSheet, Button } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import InitScreen from "./src/screens/InitScreen";
 import StartScreen from "./src/screens/StartScreen";
+import WorkoutScreen from "./src/screens/WorkoutScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { MobxProvider } from "./src/components/provider";
@@ -27,21 +28,9 @@ export default function App() {
       <PaperProvider theme={theme}>
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen
-              name="Home"
-              component={InitScreen}
-              options={{
-                headerTitle: "Ваши характиристики",
-                headerRight: () => (
-                  <Button
-                    onPress={() => alert("This is a button!")}
-                    title="Далее"
-                    color="red"
-                  />
-                ),
-              }}
-            />
-            <Stack.Screen name="StartPage" component={StartScreen} />
+            <Stack.Screen name="Home" component={InitScreen} />
+            <Stack.Screen name="Start" component={StartScreen} />
+            <Stack.Screen name="Workout" component={WorkoutScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

@@ -11,10 +11,7 @@ const InitInfoScreen = observer(({ navigation }) => {
     navigation.setOptions({
       headerTitle: "Ваши характиристики",
       headerRight: () => (
-        <Button
-          onPress={() => navigation.navigate("StartPage")}
-          title="Далее"
-        />
+        <Button onPress={() => navigation.navigate("Start")} title="Далее" />
       ),
     });
   }, [navigation]);

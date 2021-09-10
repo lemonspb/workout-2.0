@@ -12,10 +12,7 @@ const StartScreen = observer(({ navigation }) => {
     navigation.setOptions({
       headerTitle: "Выбор упражнений",
       headerRight: () => (
-        <Button
-          onPress={() => navigation.navigate("StartPage")}
-          title="начать"
-        />
+        <Button onPress={() => navigation.navigate("Workout")} title="начать" />
       ),
       headerBackTitle: "Назад",
     });
@@ -29,11 +26,16 @@ const StartScreen = observer(({ navigation }) => {
     workout.onSelectWorkout(id);
   };
 
+  const onChangeValue = (id, value) => {
+    workout.onChangeAmount(id, value, "limit");
+  };
+
   return (
     <>
       <ScrollView style={styles.container}>
         <ModalContainer
-          onChangeAmount={workout.onChangeAmount}
+          onChangeValue={onChangeValue}
+          selectValue={workout.selectWorkout?.limit}
           selectItem={workout.selectWorkout}
           listAmount={workout.listAmount}
           modalVisible={modalVisible}

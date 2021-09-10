@@ -1,11 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, Modal, Pressable } from "react-native";
 import { Picker } from "@react-native-community/picker";
 import { observer } from "mobx-react-lite";
 
 const ModalContainer = observer((props) => {
-  console.log(props, "++");
-
+  const [selectValue, setSelectValue] = useState(props.selectValue);
   return (
     <Modal
       animationType="slide"
@@ -16,9 +15,10 @@ const ModalContainer = observer((props) => {
         <View style={styles.modalView}>
           <Text style={styles.modalText}>{props.title}</Text>
           <Picker
-            selectedValue={props.selectItem?.limit}
+            selectedValue={selectValue}
             onValueChange={(itemValue) => {
-              props.onChangeAmount(props.selectItem.id, itemValue);
+              setSelectValue(itemValue);
+              props.onChangeValue(props.selectItem.id, itemValue);
             }}
           >
             <Picker.Item label={"Выберите кол-во"} value={""} key={""} />
