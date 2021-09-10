@@ -5,6 +5,11 @@ import { observer } from "mobx-react-lite";
 
 const ModalContainer = observer((props) => {
   const [selectValue, setSelectValue] = useState(props.selectValue);
+
+  const onCloseModal = () => {
+    props.setModalVisible(false);
+    props.onChangeValue(props.selectItem.id, selectValue);
+  };
   return (
     <Modal
       animationType="slide"
@@ -18,7 +23,6 @@ const ModalContainer = observer((props) => {
             selectedValue={selectValue}
             onValueChange={(itemValue) => {
               setSelectValue(itemValue);
-              props.onChangeValue(props.selectItem.id, itemValue);
             }}
           >
             <Picker.Item label={"Выберите кол-во"} value={""} key={""} />
@@ -28,7 +32,7 @@ const ModalContainer = observer((props) => {
           </Picker>
           <Pressable
             style={[styles.button, styles.buttonClose]}
-            onPress={() => props.setModalVisible(false)}
+            onPress={() => onCloseModal()}
           >
             <Text style={styles.textStyle}>ОК</Text>
           </Pressable>

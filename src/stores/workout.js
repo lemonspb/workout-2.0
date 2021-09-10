@@ -47,9 +47,12 @@ class Workout {
 
   onChangeAmount = (idx, newValue, type) => {
     const itemWorkout = this.listSelectWorkout.find(({ id }) => id === idx);
-    itemWorkout[type] = newValue;
+    if (type === "limit") {
+      itemWorkout.limit = newValue;
+    }
     if (type === "done") {
-      const leftToDoResult = itemWorkout.limit - newValue;
+      itemWorkout.done += newValue;
+      const leftToDoResult = itemWorkout.limit - itemWorkout.done;
       itemWorkout.leftToDo = leftToDoResult <= 0 ? 0 : leftToDoResult;
     }
     console.log(itemWorkout);
