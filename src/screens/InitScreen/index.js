@@ -5,13 +5,18 @@ import { Picker } from "@react-native-community/picker";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../components/provider";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const InitInfoScreen = observer(({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: "Ваши характиристики",
+      headerTitle: "Профиль",
       headerRight: () => (
-        <Button onPress={() => navigation.navigate("Start")} title="Далее" />
+        <Button onPress={() => navigation.navigate("Start")} title="Готово" />
+      ),
+      tabBarLabel: "Профиль",
+      tabBarIcon: ({ color }) => (
+        <MaterialCommunityIcons name="account" color={color} size={26} />
       ),
     });
   }, [navigation]);

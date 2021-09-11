@@ -1,16 +1,16 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import InitScreen from "./src/screens/InitScreen";
 import StartScreen from "./src/screens/StartScreen";
-import WorkoutScreen from "./src/screens/WorkoutScreen";
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { MobxProvider } from "./src/components/provider";
-const Tab = createBottomTabNavigator();
+import ScreenWorkoutContainer from "./src/screens/ScreenWorkoutContainer";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const theme = {
   ...DefaultTheme,
@@ -27,11 +27,14 @@ export default function App() {
     <MobxProvider>
       <PaperProvider theme={theme}>
         <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={InitScreen} />
-            <Stack.Screen name="Start" component={StartScreen} />
-            <Stack.Screen name="Workout" component={WorkoutScreen} />
-          </Stack.Navigator>
+          <Tab.Navigator>
+            <Tab.Screen
+              name="Start"
+              component={ScreenWorkoutContainer}
+              options={{ headerShown: false }}
+            />
+            <Tab.Screen name="Settings" component={InitScreen} />
+          </Tab.Navigator>
         </NavigationContainer>
       </PaperProvider>
     </MobxProvider>

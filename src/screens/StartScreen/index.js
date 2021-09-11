@@ -5,6 +5,7 @@ import { observer } from "mobx-react-lite";
 import { useStore } from "../../components/provider";
 import { List } from "react-native-paper";
 import ModalContainer from "../../components/modal";
+
 const StartScreen = observer(({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
 

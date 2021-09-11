@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from "react";
-import { StyleSheet, Button, ScrollView } from "react-native";
+import { StyleSheet, Text, ScrollView } from "react-native";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../components/provider";
 import { DataTable } from "react-native-paper";
@@ -8,6 +8,8 @@ import ModalContainer from "../../components/modal";
 const WorkoutScreen = observer(({ navigation }) => {
   const { workout } = useStore();
 
+  const [seconds, setSeconds] = React.useState("0:0");
+
   const [modalVisible, setModalVisible] = useState(false);
 
   useLayoutEffect(() => {
@@ -15,6 +17,24 @@ const WorkoutScreen = observer(({ navigation }) => {
       headerTitle: "Тренировка",
     });
   }, [navigation]);
+
+  function update() {
+    let ss = seconds.split(":");
+    let dt = new Date();
+    dt.setHours(0);
+    dt.setMinutes(ss[0]);
+    dt.setSeconds(ss[1]);
+
+    let dt2 = new Date(dt.valueOf() + 1000);
+    let temp = dt2.toTimeString().split(" ");
+    let ts = temp[0].split(":");
+
+    setSeconds(ts[1] + ":" + ts[2]);
+  }
+
+  React.useEffect(() => {
+    setTimeout(() => update(), 1000);
+  });
 
   const onChangeValue = (id) => {
     setModalVisible(true);
@@ -26,6 +46,9 @@ const WorkoutScreen = observer(({ navigation }) => {
   };
   return (
     <ScrollView style={styles.container}>
+      <Text style={styles.timer}>
+        Время: <Text style={styles.count}> {seconds}</Text>
+      </Text>
       <ModalContainer
         onChangeValue={onChangeValueModal}
         selectItem={workout.selectWorkout}
@@ -59,6 +82,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   input: {
     height: 40,
@@ -68,6 +93,13 @@ const styles = StyleSheet.create({
   },
   title: {
     paddingBottom: 100,
+  },
+  timer: {
+    paddingTop: 23,
+    textAlign: "right",
+  },
+  count: {
+    fontWeight: "700",
   },
 });
 
