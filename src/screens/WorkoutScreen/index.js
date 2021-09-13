@@ -14,7 +14,8 @@ const WorkoutScreen = observer(({ navigation }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: "Тренировка",
+      headerTitle: "Тренеровка",
+      headerBackTitle: "Назад",
     });
   }, [navigation]);
 
@@ -70,6 +71,9 @@ const WorkoutScreen = observer(({ navigation }) => {
               <DataTable.Cell>{workout.leftToDo}</DataTable.Cell>
               <DataTable.Cell>{workout.done}</DataTable.Cell>
               <DataTable.Cell>{workout.limit}</DataTable.Cell>
+              <DataTable.Cell>
+                {workout.listResults.map((list, i) => `${i + 1})${list},`)}
+              </DataTable.Cell>
             </DataTable.Row>
           );
         })}

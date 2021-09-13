@@ -12,7 +12,7 @@ const ScreenWorkoutContainer = observer(({ navigation }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       tabBarLabel: "Тренероваться",
-
+      headerBackTitle: "Назад",
       tabBarIcon: ({ color }) => (
         <MaterialCommunityIcons name="home" color={color} size={26} />
       ),

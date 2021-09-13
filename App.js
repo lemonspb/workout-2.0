@@ -9,6 +9,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { MobxProvider } from "./src/components/provider";
 import ScreenWorkoutContainer from "./src/screens/ScreenWorkoutContainer";
+import ResultsScreenContainer from "./src/screens/ResultsScreenContainer";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +35,7 @@ export default function App() {
               options={{ headerShown: false }}
             />
             <Tab.Screen name="Settings" component={InitScreen} />
+            <Tab.Screen name="Results" component={ResultsScreenContainer} />
           </Tab.Navigator>
         </NavigationContainer>
       </PaperProvider>
