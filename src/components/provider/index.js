@@ -7,7 +7,6 @@ const mobxContext = React.createContext(null);
 
 export const MobxProvider = ({ children }) => {
   const store = useLocalStore(() => new RootStore());
-  console.log;
   return <mobxContext.Provider value={store}>{children}</mobxContext.Provider>;
 };
 
